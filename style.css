@@ -1,0 +1,45 @@
+/* Logo responsivo */
+.logo{
+    max-width: 200px; /* tamaño máximo en pantalla grande */
+    width: 50%;       /* ocupa el 50% del contenedor del header */
+    height: auto;     /* mantiene proporción */
+    display: block;
+    margin: 0 auto 20px; /* centrado con margen inferior */
+}
+
+
+@media(max-width:768px){
+    .logo{
+        max-width: 150px; /* más pequeño en celular */
+        width: 60%;
+        margin-bottom: 15px;
+    }
+}
+
+.btn{
+    display:inline-block;
+    margin:10px;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition: all 0.3s ease; /* transición suave para todos los cambios */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* sombra leve para dar profundidad */
+}
+
+.instagram{ background:#A98274; }
+.facebook{ background:#6b8ea6; }
+.whatsapp{ background:#6fbfb2; }
+
+/* EFECTO HOVER */
+.btn:hover{
+    opacity:1;
+    transform: translateY(-3px) scale(1.05); /* sube y se hace un poco más grande */
+    box-shadow: 0 8px 12px rgba(0,0,0,0.4); /* sombra más marcada */
+}
+
+/* TRANSICIÓN SUAVE DE COLOR AL HOVER */
+.instagram:hover{ background:#c49c85; } 
+.facebook:hover{ background:#8aa3bb; } 
+.whatsapp:hover{ background:#88d1c3; }
