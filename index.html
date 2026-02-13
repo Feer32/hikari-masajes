@@ -1,233 +1,49 @@
-fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-/* BODY */
-body{
-    font-family: 'Poppins', sans-serif;
-    background-color:#f5f2ec;
-    color:#3f4a4a;
-}
-
-/* HEADER */
-header{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    height:100vh;
-    background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), 
-                url('img/port3.jpeg');
-    background-size:cover;
-    background-position:center 35%;
-}
-
-.logo{
-    width:200px;
-    max-width:70%;
-    margin-bottom:20px;
-    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.15));
-}
-
-header p{
-    font-size:18px;
-    letter-spacing:1px;
-}
-
-/* SECCIONES */
-section{
-    padding:80px 20px;
-    max-width:1100px;
-    margin:auto;
-}
-
-h2{
-    font-family:'Playfair Display', serif;
-    text-align:center;
-    margin-bottom:50px;
-    font-size:34px;
-    color:#2f3e3e;
-}
-
-/* SERVICIOS */
-.servicios{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.07);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-}
-
-.card h3{
-    font-family:'Playfair Display', serif;
-    margin-bottom:15px;
-    color:#2f3e3e;
-    font-size:20px;
-}
-
-.card p{
-    font-size:14px;
-    line-height:1.6;
-}
-
-.btn-consultar{
-    display:inline-block;
-    margin-top:20px;
-    padding:10px 22px;
-    border-radius:30px;
-    text-decoration:none;
-    background:#8fbfb2;
-    color:white;
-    font-weight:500;
-    transition:0.3s;
-}
-
-.btn-consultar:hover{
-    background:#6e9f90;
-}
-
-/* SOBRE */
-.sobre{
-    text-align:center;
-    line-height:1.7;
-    max-width:700px;
-    margin:auto;
-}
-
-/* BOTONES REDES */
-.botones{
-    text-align:center;
-    margin-top:40px;
-}
-
-.btn{
-    display:inline-block;
-    margin:10px;
-    padding:12px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    color:white;
-    font-weight:500;
-    transition:0.3s;
-}
-
-.instagram{ background:#b89c8e; }
-.facebook{ background:#9fb4c4; }
-.whatsapp{ background:#8fbfb2; }
-
-.btn:hover{
-    transform:translateY(-3px);
-    opacity:0.9;
-}
-
-/* WHATSAPP FLOTANTE */
-.whatsapp-fijo{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#8fbfb2;
-    color:white;
-    padding:15px 18px;
-    border-radius:50px;
-    text-decoration:none;
-    font-size:14px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
-    z-index:1000;
-}
-
-.whatsapp-fijo:hover{
-    background:#6e9f90;
-}
-
-/* RESPONSIVE - SERVICIOS DESLIZABLES EN CELU */
-@media(max-width:768px){
-
-    header{
-        height:90vh;
-    }
-
-    .servicios{
-        display:flex;
-        overflow-x:auto;
-        gap:20px;
-        padding-bottom:10px;
-    }
-
-    .card{
-        min-width:280px;
-        flex:0 0 auto;
-    }
-}
-
-footer{
-    text-align:center;
-    padding:25px;
-    background:#eee8e1;
-    font-size:14px;
-    margin-top:60px;
-}
-
-</style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hikari Masajes | Fernanda</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+<!-- HEADER -->
 <header>
-    <img src="img/logo1.png" class="logo">
+    <div class="overlay"></div>
+    <img src="img/logo2.png" class="logo" alt="Hikari Masajes">
     <p>Bienestar físico y armonía interior</p>
 </header>
 
+<!-- SERVICIOS -->
 <section>
     <h2>Servicios Terapéuticos</h2>
-
     <div class="servicios">
-
         <div class="card">
             <h3>Relajación Integral</h3>
             <p>Sesión terapéutica de presión suave y movimientos envolventes que activan el sistema nervioso parasimpático, favoreciendo la relajación profunda y la regulación del estrés.</p>
             <a href="https://wa.me/542477614884" class="btn-consultar" target="_blank">Consultar</a>
         </div>
-
         <div class="card">
             <h3>Masaje Localizado</h3>
             <p>Enfocado en zonas específicas como espalda, cervicales o piernas. Alivia tensiones acumuladas y mejora la movilidad muscular.</p>
             <a href="https://wa.me/542477614884" class="btn-consultar" target="_blank">Consultar</a>
         </div>
-
         <div class="card">
             <h3>Descontracturante Profundo</h3>
             <p>Terapia manual orientada a contracturas y sobrecargas musculares. Favorece la circulación y restablece el equilibrio corporal.</p>
             <a href="https://wa.me/542477614884" class="btn-consultar" target="_blank">Consultar</a>
         </div>
-
         <div class="card">
             <h3>Reductor / Modelador</h3>
             <p>Técnica manual intensa que estimula tejidos y ayuda a mejorar la apariencia corporal desde una mirada terapéutica integral.</p>
             <a href="https://wa.me/542477614884" class="btn-consultar" target="_blank">Consultar</a>
         </div>
-
     </div>
 </section>
 
-<section class="sobre">
+<section class="sobre wide">
     <h2>Sobre Hikari</h2>
     <p>
         Soy Fernanda, creadora de Hikari.  
@@ -235,6 +51,17 @@ footer{
         Cada sesión es personalizada, respetando los tiempos y necesidades de cada persona.
     </p>
 
+    <!-- GALERÍA CARRUSEL CON SNAP -->
+    <div class="galeria">
+        <div class="galeria-items">
+            <img src="img/servicios.jpeg" alt="Sala de masajes">
+            <img src="img/espacio15.jpeg" alt="Detalle del espacio">
+            <img src="img/espacio11.jpeg" alt="Productos utilizados">
+            <img src="img/espacio4.jpeg" alt="Ambiente relajante">
+        </div>
+    </div>
+
+    <!-- BOTONES REDES -->
     <div class="botones">
         <a href="https://www.instagram.com/hikarimasajes_/" class="btn instagram" target="_blank">Instagram</a>
         <a href="https://www.facebook.com/" class="btn facebook" target="_blank">Facebook</a>
@@ -242,13 +69,26 @@ footer{
     </div>
 </section>
 
+
+<!-- WHATSAPP FLOTANTE -->
 <a href="https://wa.me/542477614884" class="whatsapp-fijo" target="_blank">
     WhatsApp
 </a>
 
+<!-- FOOTER -->
 <footer>
     © 2026 Hikari Masajes - Fernanda
 </footer>
+
+<!-- SCRIPT FADE-IN -->
+<script>
+    window.addEventListener('load', () => {
+        const logo = document.querySelector('.logo');
+        const texto = document.querySelector('header p');
+        logo.classList.add('fade-in');
+        texto.classList.add('fade-in');
+    });
+</script>
 
 </body>
 </html>
@@ -257,6 +97,7 @@ footer{
 
 
   
+
 
 
 
