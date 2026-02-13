@@ -1,21 +1,189 @@
-/* Logo responsivo */
-.logo{
-    max-width: 200px; /* tamaño máximo en pantalla grande */
-    width: 50%;       /* ocupa el 50% del contenedor del header */
-    height: auto;     /* mantiene proporción */
-    display: block;
-    margin: 0 auto 20px; /* centrado con margen inferior */
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BODY */
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color:#a0a0a0; /* gris medio */
+    color:#333;
+}
+
+/* HEADER */
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: url('img/port3.jpeg') center/cover no-repeat;
+    overflow: hidden;
+}
+
+header .overlay{
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background-color: rgba(0,0,0,0.35);
+    z-index:1;
+}
+
+/* Logo del header */
+header .logo {
+    max-height: 90%;
+    width: auto;
+    position: relative;
+    z-index: 2;
+    opacity: 0.3;  /* aumenta la transparencia */
+    filter: brightness(1.05) drop-shadow(0 6px 10px rgba(0,0,0,0.4));
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+header .logo.fade-in{
+    opacity: 0.5;   /* cuando aparezca al cargar, sigue muy transparente */
+    transform: scale(1.02);
 }
 
 
+/* Texto header */
+header p {
+    font-size:1.6rem;
+    margin-top:20px;
+    color:#fff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    z-index:2;
+    opacity:0;
+    transition: opacity 2s ease, transform 2s ease;
+}
+header p.fade-in{
+    opacity:1;
+    transform: translateY(0);
+}
+
+/* SECCIONES */
+section{
+    padding:80px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+h2{
+    font-family:'Playfair Display', serif;
+    text-align:center;
+    margin-bottom:50px;
+    font-size:34px;
+    color:#222;
+}
+
+/* SERVICIOS */
+.servicios{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:30px;
+}
+.card{
+    background:#333; /* gris oscuro */
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-6px);
+}
+.card h3{
+    font-family:'Playfair Display', serif;
+    margin-bottom:15px;
+    color:#fff;
+    font-size:20px;
+}
+.card p{
+    font-size:14px;
+    line-height:1.6;
+    color:#ddd;
+}
+.btn-consultar{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    background:#4cb0f0; /* azul vivo */
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+.btn-consultar:hover{
+    background:#0f82c0;
+}
+
+
+/* SECCIÓN SOBRE HIKARI - fondo y ancho completo */
+.sobre.wide{
+    max-width:1100px;
+    margin:40px auto 80px auto;
+    padding: 40px 20px;       /* espacio interno */
+    text-align:center;
+    line-height:1.7;
+    background: rgba(255,255,255,0.15); /* fondo semi-transparente */
+    border-radius: 20px;      /* suaviza bordes */
+    backdrop-filter: blur(5px); /* efecto difuminado detrás del fondo */
+}
+
+/* GALERÍA CARRUSEL - fotos más grandes */
+.sobre.wide .galeria{
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    margin: 30px 0;
+}
+
+.sobre.wide .galeria-items{
+    display: flex;
+    gap: 25px;
+    flex-wrap: nowrap;
+}
+
+.sobre.wide .galeria-items img{
+    height:250px;               /* fotos más grandes */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    transition: transform 0.3s, opacity 0.3s;
+    cursor: pointer;
+}
+
+.sobre.wide .galeria-items img:hover{
+    transform: scale(1.1);       /* zoom al pasar el mouse */
+    opacity:0.95;
+}
+
+/* RESPONSIVE */
 @media(max-width:768px){
-    .logo{
-        max-width: 150px; /* más pequeño en celular */
-        width: 60%;
-        margin-bottom: 15px;
+    .sobre.wide{
+        margin:30px auto 50px auto;
+        padding:20px 15px;
+    }
+    .sobre.wide .galeria-items img{
+        height:180px;
     }
 }
 
+
+
+/* BOTONES REDES */
+.botones{
+    text-align:center;
+    margin-top:40px;
+}
 .btn{
     display:inline-block;
     margin:10px;
@@ -24,22 +192,66 @@
     text-decoration:none;
     color:white;
     font-weight:500;
-    transition: all 0.3s ease; /* transición suave para todos los cambios */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* sombra leve para dar profundidad */
+    transition: all 0.3s ease;
+    box-shadow:0 4px 6px rgba(0,0,0,0.3);
 }
-
-.instagram{ background:#A98274; }
-.facebook{ background:#6b8ea6; }
-.whatsapp{ background:#6fbfb2; }
-
-/* EFECTO HOVER */
+.instagram{ background:#e1306c; } /* rosa vivo */
+.facebook{ background:#1877f2; } /* azul vivo */
+.whatsapp{ background:#25d366; } /* verde vivo */
 .btn:hover{
-    opacity:1;
-    transform: translateY(-3px) scale(1.05); /* sube y se hace un poco más grande */
-    box-shadow: 0 8px 12px rgba(0,0,0,0.4); /* sombra más marcada */
+    opacity:0.9;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:0 8px 12px rgba(0,0,0,0.4);
 }
 
-/* TRANSICIÓN SUAVE DE COLOR AL HOVER */
-.instagram:hover{ background:#c49c85; } 
-.facebook:hover{ background:#8aa3bb; } 
-.whatsapp:hover{ background:#88d1c3; }
+/* WHATSAPP FLOTANTE */
+.whatsapp-fijo{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25d366;
+    color:white;
+    padding:15px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:14px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    z-index:1000;
+}
+.whatsapp-fijo:hover{
+    background:#128c50;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header{
+        height:90vh;
+    }
+    header .logo{
+        max-height:80%;
+        opacity:0.7;
+    }
+    .servicios{
+        display:flex;
+        overflow-x:auto;
+        gap:20px;
+        padding-bottom:10px;
+    }
+    .card{
+        min-width:280px;
+        flex:0 0 auto;
+    }
+    .galeria-items img{
+        height:150px;
+    }
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#a0a0a0;
+    color:#333;
+    font-size:14px;
+    margin-top:60px;
+}
